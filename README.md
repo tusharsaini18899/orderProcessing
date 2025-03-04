@@ -6,6 +6,7 @@ spring.datasource.username=root
 spring.datasource.password=root@123`
 
 
+
 ### **Example API requests and responses**
 ### 1: create Order:
 Request:
@@ -56,7 +57,8 @@ Response:
    }`
 
 
-### **explanation of design decisions and trade-offs.**
+
+### **Explanation of design decisions and trade-offs.**
 RESTful API Structure
 Decision: The API follows RESTful principles with clear endpoints:
 * POST /orders → Create orders
@@ -69,9 +71,8 @@ Decision: Used an in-memory queue (ConcurrentLinkedQueue) for async order proces
 Trade-off: In-memory processing is fast but not persistent—if the app crashes, unprocessed orders are lost. A persistent queue like Kafka or RabbitMQ would be more reliable.
 
 
+
 ### Assumptions made during development.
 * Orders Cannot Be Canceled
-* User IDs and Item IDs Will Be Mapped to Separate Tables
+* User IDs and Item IDs Will Be Mapped to Separate Tables(USERS, ITEM)
 * No orders will be lost due to application restarts.
-
-   
