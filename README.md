@@ -59,10 +59,10 @@ Response:
 ### **explanation of design decisions and trade-offs.**
 RESTful API Structure
 Decision: The API follows RESTful principles with clear endpoints:
-POST /orders → Create orders
-GET /orders/{orderId} → Retrieve order status
-GET /orders/metrics → Fetch system metrics
-Trade-off: REST APIs are easy to integrate, but WebSockets or GraphQL might provide real-time updates more efficiently.
+* POST /orders → Create orders
+* GET /orders/{orderId} → Retrieve order status
+* GET /orders/metrics → Fetch system metrics
+* Trade-off: REST APIs are easy to integrate, but WebSockets or GraphQL might provide real-time updates more efficiently.
 
 Asynchronous Order Processing
 Decision: Used an in-memory queue (ConcurrentLinkedQueue) for async order processing.
@@ -70,8 +70,8 @@ Trade-off: In-memory processing is fast but not persistent—if the app crashes,
 
 
 ### Assumptions made during development.
-Orders Cannot Be Canceled
-User IDs and Item IDs Will Be Mapped to Separate Tables
-No orders will be lost due to application restarts.
+* Orders Cannot Be Canceled
+* User IDs and Item IDs Will Be Mapped to Separate Tables
+* No orders will be lost due to application restarts.
 
    
