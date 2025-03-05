@@ -1,26 +1,30 @@
 # **Instructions for setting up and running:**
 java, maven and mysql is required to run the application.
 Please change database Credential(url,username,password) in application.properties file before running the application
-`spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce?createDatabaseIfNotExist=true
+```bash
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce?createDatabaseIfNotExist=true
 spring.datasource.username=root
-spring.datasource.password=root@123`
+spring.datasource.password=root@123
+```
 
 
 
 # **Example API requests and responses**
 ### 1: create Order:
 Request:
-`curl --location 'http://localhost:8080/orders' \
+```bash
+curl --location 'http://localhost:8080/orders' \
 --header 'Content-Type: application/json' \
 --data '{
-"userId": 1,
-"itemIds": "item1,item2",
-"totalAmount": 100.50
-}
-'`
+    "userId": 1,
+    "itemIds": "item1,item2",
+    "totalAmount": 100.50
+}'
+```
 
 Response:
-`{
+```bash
+{
 "orderId": 52,
 "userId": 1,
 "itemIds": "item1,item2",
@@ -28,14 +32,18 @@ Response:
 "status": "Pending",
 "createdAt": "2025-03-05T00:30:30.969187",
 "processedAt": null
-}`
+}
+```
 
 ### 2.Check order status by id:
 Request:
-`curl --location 'http://localhost:8080/orders/1'`
+```bash
+curl --location 'http://localhost:8080/orders/1'
+```
 
 Response:
-`{
+```bash
+{
 "orderId": 1,
 "userId": 1,
 "itemIds": "item1,item2",
@@ -43,18 +51,24 @@ Response:
 "status": "Completed",
 "createdAt": "2025-03-04T23:20:56",
 "processedAt": "2025-03-04T23:20:58"
-}`
+}
+```
 
 ### 3. Get Key Metrics:
 Request:
-`curl --location 'http://localhost:8080/orders/metrics'`
+```bash
+curl --location 'http://localhost:8080/orders/metrics'
+```
+
 Response:
-`   {
+```bash
+{
    "avgProcessingTime": 229.0,
    "pending": 16,
    "totalProcessed": 36,
    "processing": 0
-   }`
+}
+```
 
 
 
