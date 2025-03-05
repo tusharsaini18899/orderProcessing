@@ -1,4 +1,4 @@
-### **Instructions for setting up and running:**
+# **Instructions for setting up and running:**
 java, maven and mysql is required to run the application.
 Please change database Credential(url,username,password) in application.properties file before running the application
 `spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce?createDatabaseIfNotExist=true
@@ -7,7 +7,7 @@ spring.datasource.password=root@123`
 
 
 
-### **Example API requests and responses**
+# **Example API requests and responses**
 ### 1: create Order:
 Request:
 `curl --location 'http://localhost:8080/orders' \
@@ -58,7 +58,7 @@ Response:
 
 
 
-### **Explanation of design decisions and trade-offs.**
+# **Explanation of design decisions and trade-offs.**
 RESTful API Structure
 Decision: The API follows RESTful principles with clear endpoints:
 * POST /orders → Create orders
@@ -72,7 +72,7 @@ Trade-off: In-memory processing is fast but not persistent—if the app crashes,
 
 
 
-### Assumptions made during development.
+# Assumptions made during development.
 * Orders Cannot Be Canceled
 * User IDs and Item IDs Will Be Mapped to Separate Tables(USERS, ITEM)
 * No orders will be lost due to application restarts.
